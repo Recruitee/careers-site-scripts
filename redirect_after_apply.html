@@ -1,0 +1,8 @@
+<script>
+  window.addEventListener("load", function load(event){
+    window.removeEventListener("load", load, false);
+    if (document.body.className.indexOf("applied") > 0) {
+      window.location.replace("http://recruitee.com"); // change to custom URL
+    }
+  },false);
+</script>

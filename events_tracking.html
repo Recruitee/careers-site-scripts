@@ -1,0 +1,19 @@
+<script>
+  window.addEventListener("load", function load(event){
+    window.removeEventListener("load", load, false);
+    switch(document.body.classList[1]) {
+      case "index":
+        console.log('Company careers site'); // change to custom tracking javascript code
+        break;
+      case "show":
+        console.log('Job offer'); // change to custom tracking javascript code
+        break;
+      case "new":
+        console.log('Apply form'); // change to custom tracking javascript code
+        break;
+      case "applied":
+        console.log('Candidate applied'); // change to custom tracking javascript code
+        break;
+    }
+  }, false);
+</script>

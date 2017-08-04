@@ -1,0 +1,13 @@
+<script>
+  window.addEventListener("load", function load(event){
+    window.removeEventListener("load", load, false);
+    if (document.body.className.indexOf("applied") > 0) {
+      var conversion_id = 'INDEED_CONVERSION_ID';
+      var conversion_label = '';
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "//conv.indeed.com/pagead/conversion.js";
+      $("head").append(script);
+    }
+  },false);
+</script>
