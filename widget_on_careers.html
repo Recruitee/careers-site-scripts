@@ -1,33 +1,34 @@
-
 <script type="text/javascript" src="https://d10zminp1cyta8.cloudfront.net/widget.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {
-    var widget = new RTWidget({
-      "companies": [
-        COMPANY_ID
-      ],
-      "detailsMode": "popup",
-      "language": "en",
-      "departmentsFilter": [],
-      "themeVars": {
-       "text": "#5C6F78",
-       "textDark": "#37474F",
-       "primary": "#1999E3",
-       "secondary": "#000",
-       "fontFamily": "\"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif;",
-       "baseFontSize": "16px"
-      },
-      "flags": {
-       "showLocation": true,
-       "showCountry": true,
-       "showCity": true,
-       "showApplyWithLinkedin": true,
-       "showApplyWithIndeed": false,
-       "groupByLocation": false,
-       "groupByDepartment": false,
-       "groupByCompany": false
-      }
-    });
+    if (document.body.className.indexOf('index') > 0) {
+      var widget = new RTWidget({
+        "companies": [
+          COMPANY_ID
+        ],
+        "detailsMode": "popup",
+        "language": "en",
+        "departmentsFilter": [],
+        "themeVars": {
+         "text": "#5C6F78",
+         "textDark": "#37474F",
+         "primary": "#1999E3",
+         "secondary": "#000",
+         "fontFamily": "\"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif;",
+         "baseFontSize": "16px"
+        },
+        "flags": {
+         "showLocation": true,
+         "showCountry": true,
+         "showCity": true,
+         "showApplyWithLinkedin": true,
+         "showApplyWithIndeed": false,
+         "groupByLocation": false,
+         "groupByDepartment": false,
+         "groupByCompany": false
+        }
+      });
+    }
   });
  </script>
-<!-- create custom HTML/CSS with code <div id="recruitee-careers"> -->
+<!-- create custom HTML/CSS with code <div id="recruitee-careers"></div> -->
