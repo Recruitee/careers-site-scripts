@@ -1,0 +1,16 @@
+<script>
+  window.addEventListener("load", function load(event) {
+    window.removeEventListener("load", load, false);
+    // redirect from main page to custom URL
+    if (!document.body.querySelector("#editor") && window.location.pathname == "/") {
+      var url = "http://recruitee.com"; // change to custom URL
+      window.location.replace(url);
+    }
+    // redirect from job page to custom URL with job slug
+    if (!document.body.querySelector("#editor")) {
+      var url = "http://recruitee.com"; // change to custom URL
+      var slug = window.location.pathname.split("/")[2];
+      window.location.replace(url + (slug ? "/" + slug : ""));
+    }
+  }, false);
+</script>
