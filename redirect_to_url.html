@@ -10,7 +10,7 @@
     if (!document.body.querySelector("#editor")) {
       var url = "http://recruitee.com"; // change to custom URL
       var slug = window.location.pathname.split("/")[2];
-      window.location.replace(url + (slug ? "/" + slug : ""));
+      window.location.replace(url + (slug ? "/" + slug : "") + window.location.search);
     }
   }, false);
 </script>
