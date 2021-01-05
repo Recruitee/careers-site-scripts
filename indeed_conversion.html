@@ -1,13 +1,32 @@
+<!-- Indeed Application Tag -->
+<script async src="https://convcdn.indeed.tech/ld-min.js"></script>
+
 <script>
   window.addEventListener("load", function load(event){
     window.removeEventListener("load", load, false);
-    if (document.body.className.indexOf("applied") > 0) {
-      var conversion_id = 'INDEED_CONVERSION_ID';
-      var conversion_label = '';
-      var script = document.createElement("script");
-      script.type = "text/javascript";
-      script.src = "//conv.indeed.com/pagead/conversion.js";
-      $("head").append(script);
+    var atsId = "259363645";
+    var metaOfferGuid = document.querySelector("meta[name='offer-guid']");
+
+    if (metaOfferGuid) {
+      !function() {
+        window.indeed_q = window.indeed_q || [];
+        window.ict = window.ict || function () {
+          indeed_q.push(arguments);
+        };
+      }()
+
+      if (document.body.className.indexOf("applied") > -1) {
+        ict("init", atsId);
+        ict("recordApply", {
+          jobId: 'offer-' + metaOfferGuid.getAttribute('property')
+        });
+      } else if (document.body.className.indexOf("show") > -1) {
+        ict("init", atsId);
+        ict("recordLanding", {
+          jobId: 'offer-' + metaOfferGuid.getAttribute('property')
+        });
+      }
     }
-  },false);
+  }, false);
 </script>
+<!-- END Indeed Application Tag -->
